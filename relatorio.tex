@@ -1,0 +1,212 @@
+\documentclass[12pt,fleqn]{article}
+%\usepackage {psfig,epsfig} % para incluir figuras em PostScript
+\usepackage{times}
+\usepackage{amsfonts,amsthm,amsopn,amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[intlimits]{amsmath}
+\usepackage{fancyhdr}
+\usepackage[num]{abntex2cite}%citacao numerica, senao alf
+
+\citebrackets[] %usando [] nas citacoes
+
+%alguns macros
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rn}{{\ensuremath{\mathbb{R}}}^{n}}
+\newcommand{\Rm}{{\ensuremath{\mathbb{R}}}^{m}}
+\newcommand{\Rmn}{{\ensuremath{\mathbb{R}}}^{{m}\times{n}}}
+\newcommand{\contcaption}[1]{\vspace*{-0.6\baselineskip}\begin{center}#1\end{center}\vspace*{-0.6\baselineskip}}
+%=======================================================================
+% Dimensões da página
+\usepackage{a4}                       % tamanho da página
+\setlength{\textwidth}{16.0cm}        % largura do texto
+\setlength{\textheight}{9.0in}        % tamanho do texto (sem head, etc)
+\renewcommand{\baselinestretch}{1.15} % espaçamento entre linhas
+\addtolength{\topmargin}{-1cm}        % espaço entre o head e a margem
+\setlength{\oddsidemargin}{-0.1cm}    % espaço entre o texto e a margem
+\setlength\parindent{24pt}     
+% Ser indulgente no preenchimento das linhas
+\sloppy
+ 
+%\bibliographystyle{plain}
+\begin{document}
+
+
+\pagestyle {empty}
+
+% Páginas iniciais
+\input{capa} % capa ilustrativa
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Folha de Rosto
+
+\begin{titlepage}
+    \vfill
+    \begin{center}
+        {\large Ithallo Junior Alves Guimarães} \\[5cm]
+        {\Huge Aplicação da tecnologia \textit{Bluetooth} para controle de acesso}\\[1cm]
+        \hspace{.35\textwidth} % posicionando a minipage
+        \begin{minipage}{.5\textwidth}
+            
+                Dissertação apresentada na Universidade de Brasília para obtenção 
+                dos créditos na disciplina de estágio supervisionado.
+            
+        \end{minipage}
+        \vfill
+        Novembro de 2017
+    \end{center}
+\end{titlepage}
+
+
+\pagestyle {empty}
+\begin{center}
+\section*{\textbf Agradecimentos}
+
+\end{center}
+
+A esta Universidade pela oportunidade.
+
+A minha orientadora de estágio pela prestatividade.
+
+A empresa por me acolher.
+\newpage
+
+
+\tableofcontents
+
+
+% Numeração em romanos para páginas iniciais (sumários, listas, etc)
+%\pagenumbering {roman}
+\pagestyle {plain}
+
+
+
+\setcounter{page}{0}
+\pagenumbering{arabic}
+  
+\setlength{\parindent}{1.25cm}  %espaco entre paragrafo e margem 
+% Espaçamento entre parágrafos
+
+\parskip 5pt
+
+\newpage
+
+\section{Introdução}
+
+
+\hspace*{1.25cm}  O \textit{Bluetooth}  é uma tecnologia que suporta bilhões de dispositivos
+ eletrônicos ao redor do mundo, seja para automação residencial ou para  aplicações médicas.
+ Ele carrega a responsabilidade de ser o nome mais confiável em 
+ tecnologia sem fio \cite{bluetooth}.  
+
+
+Essa tecnologia é de baixo consumo de energia, quando comparada com as outras tecnologias sem fio, e  é utilizada para transferência de áudio,
+dados ou mesmo para fazer transmissão de informações(\textit{Broadcast}). O \textit{Bluetooth} ainda pode ser dividido entre duas modalidades: 
+BR/EDR (\textit{Basic Rate/Enhanced Data Rate}) e LE (\textit{Low Energy})  \cite{bluetooth}.
+
+
+A modalidade BR/EDR permite conexões sem fio contínuas de um para um (1:1), 
+utilizando conexões de ponta a ponta (P2P). Ela é ideal para transmissão 
+de áudio. Já a  LE (BTLE) pode ser utilizado tanto para conexões P2P (um para um, ideal para transferência de dados, como monitores de saúde), 
+transmissão de informações (\textit{Broadcast}) na forma de um 
+para muitos (como em \textit{beacons}) ou mesmo em redes \textit{mesh} (muitos para muitos), 
+usada em automação e redes de sensores \cite{bluetooth}.
+
+Por ser tão presente no dia a dia de boa parte de população a ponto de ser esquecida ou tomado por certo, o \textit{Bluetooth} juntamente
+com os \textit{smartphones} se tornam tecnologias extremamente atraentes ao ramo do controle de dispositivos e internet das coisas.
+
+\section{Descrição da Empresa}   
+
+
+\hspace*{1.25cm} A Loop Engenharia da Computação \cite{loop} é uma  \textit{startup} natural de Brasília  dedicada a 
+construção de \textit{hardware} e  \textit{software},  que atua desde de 2011 no mercado e 
+tem como principal produto o LoopKey, uma solução de acesso.
+
+
+O LoopKey elimina a necessidade de se andar com chaves e permite o compartilhamento rápido e prático
+de acesso a portas, bem como controle inteligente dos horários de acesso.
+
+Assim, apesar de ser uma empresa relativamente nova, ela conta com pessoal altamente capacitado, bem como com eficientes times de
+engenheiros para desenvolvimento de \textit{software} e \textit{hardware}.
+
+
+A empresa atualmente se encontra em aceleração no Centro de Desenvolvimento Tecnológico da Universidade de Brasília (CDT-UnB),
+localiza-se na Asa Norte e possui escritórios tanto em Brasília quanto em São Paulo.
+
+\section{Atividades Desenvolvidas e Cronogramas de Execução}
+
+\hspace*{1.25cm} A Tabela \ref{cron} mostra o cronograma de atividades proposto inicialmente, no que diz respeito aos meses e 
+ao que seria feito.
+
+
+\begin{table}[h!]
+\centering
+\caption {Cronograma de atividades proposto.}
+
+\label{cron}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{| c || c |} 
+\hline
+Mês &  Atividade \\ 
+\hline
+1º & Capacitação em tecnologias de automação residencial \\ 
+6º & Implementação de sistemas de controle de acesso \\
+6º & Desenvolvimento de metodologias de processos para projetos \\
+6º & Aprendizado de em projeto de circuitos eletrônicos para radiofrequência com tecnologia \textit{Bluetooth} \\
+\hline
+\end{tabular} %
+}
+\end{table}
+
+No primeiro mês, conseguiu-se fazer um estudo de automação residencial, na parte que tange a automação de portas para
+controle inteligente via \textit{smartphone}. Isso se deu por meio do estudo de como funciona a comunição via 
+\textit{Bluetooth}, bem como os protocolos internos de comunicação da empresa.
+
+Após a compreensão do funcionamento da tecnologia, o estagiário teve de implementar um sistema de comunicação UART
+( \textit{universal asynchronous receiver-trasmitter}) via \textit{Bluetooth}. Esse sistema seria posteriormente utilizado
+no controle de acesso para a empresa. 
+
+Para tanto, houve um estudo sobre sistemas embarcados,  sistemas operacionais bem como
+de bibliotecas para melhor suprir as necessidades do sistema. A linguagem de programação \textit{Python} foi escolhida
+devido a sua praticidade, documentação e relativa facilidade  e velocidade
+para se fazer prótipos de teste/aplicações finais.
+
+A elaboração do sistema de controle de acesso se deu por meio do uso de placas de controle de acesso proprietárias da empresa (LoopKey),
+dispositivos \textit{Bluetooth} rodando em  sistemas embarcados Linux e programação em \textit{Python}, sendo o estagiário
+responsável pela preparação do sistema embarcado e sua configuração integral. 
+
+Esse sistema foi utilizado para teste de novos dispositivos (testes de funcionamento, distância de operação e tempo 
+de resposta).
+
+Durante todo esse processo, o estagiário teve de se colocar por dentro das metodologias de projetos e formas de autogestão,
+para assim poder executar de forma eficiente e dentro dos prazos o que lhe foi proposto.
+
+O tempo gasto na empresa permitiu ao estgiário compreender o papel e a responsabilidade de um engenheiro no mundo real, lidando
+com prazos, consequências, interagindo de forma profissional com seus colegas de trabalho,
+bem como compreendendo a estrutura organizacional interna de empresas.
+
+\newpage
+\section{Resultados e Discussão}
+
+ \hspace*{1.25cm} Sistemas de controle de acesso foram desenvolvidos pelo estagiário. 
+ Deste modo, o mesmo trabalhou integrando sistemas embarcados Linux (e.g. \textit{Raspberry pi}), 
+ sistemas microcontrolados e a tecnologia \textit{Bluetooth}. 
+
+ O que foi desenvolvido encontra-se atualmente em fase de implementação em um novo produto, que integra a solução 
+ de acesso já fornecida pela empresa com a possibilidade de uso de multiplos dispositivos ao mesmo tempo. 
+
+\section{Considerações Finais}
+\hspace*{1.25cm} Ainda há atividades a serem executadas, uma vez que o prazo do estágio 
+permite isso (seis meses). Deste modo, ainda há a possibilidade de se aprender muito além do planejado e adquirir experiencias
+muito relevantes tanto par o mercado de trabalho quanto para o papel de engenheiro na sociedade.
+
+
+\addcontentsline{toc}{section}{Referências}
+%\bibliographystyle{abnt-alf}
+\bibliography{ref}
+%\section{Anexos}
+
+
+\end{document}
